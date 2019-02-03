@@ -1,11 +1,18 @@
 import clr
-import sys
 import json
 import os
 import ctypes
 import codecs
 import random
 import Queue
+import sys
+
+# import any custom modules under the "sys.path.append(os.path.dirname(__file__))" line
+# Required for importing modules from the main scripts directory
+# StreamLabs thread: https://ideas.streamlabs.com/ideas/SL-I-3971
+sys.path.append(os.path.dirname(__file__))
+from memes.meme_sets import getMemeSet
+from settings.settings import weapons, monsters
 
 ScriptName = "MHW Companion"
 Website = "NA"
@@ -19,48 +26,6 @@ settings = {}
 huntCurrent = None
 huntQueue = None
 
-#TODO - Move to settings.
-weapons = [
-	"Insect Glaive",
-	"Charge Blade",
-	"Switch Axe",
-	"Bow",
-	"Light Bow Gun",
-	"Heavy Bow Gun",
-	"Hammer",
-	"Hunting Horn",
-	"Long Sword",
-	"Sword & Shield",
-	"Lance",
-	"Gun Lance"
-]
-
-#TODO - Move to settings.
-monsters = [
-	"Teostra",
-	"Lunastra",
-	"Kirin",
-	"Nergigante",
-	"Vaal Hazak",
-	"Rathalos",
-	"Azure Rathalos",
-	"Pink Rathian",
-	"Diablos",
-	"Black Diablos",
-	"Bazelgeuse",
-	"Uragaan",
-	"Lavasioth", 
-	"Legiana", 
-	"Odogaron",
-	"Devil Jho",
-	"Xeno'jiva",
-	"Zorah Magdaros",
-	"Great Jagras",
-	"Kulu-Ya-Ku",
-	"Tzitzi-Ya-Ku",
-	"Great Girros",
-	"Dodogama"
-]
 
 def ScriptToggled(state):
 	return
@@ -81,6 +46,7 @@ def Init():
 			"huntSetupCommand": "!mhw-hunt-roll",
 			"weaponCommand": "!mhw-weapon-roll",
 			"monsterCommand": "!mhw-monster-roll",
+			"memeSetCommand": "!mhw-meme-set-roll",
 			"huntQueueSize": 10,
 			"permission": "Everyone",
 			"useCooldown": True,
@@ -90,7 +56,7 @@ def Init():
 			"userCooldown": 10,
 			"onUserCooldown": "$user, $command is still on user cooldown for adsfasdfasdf minutes!"
 		}
-	
+
 	huntQueue = Queue.Queue(maxsize=settings["huntQueueSize"])
 
 def Execute(data):
@@ -127,7 +93,7 @@ def Execute(data):
 			#TODO - Setup permission variable.
 			weapon = random.choice(weapons)
 			monster = random.choice(monsters)
-			
+
 			if huntQueue.full() == True:
 				Parent.SendStreamMessage("@" + data.UserName + " - Sorry, the queue is full. Please try again later.")
 				return
@@ -158,6 +124,18 @@ def Execute(data):
 			Parent.SendStreamMessage("@" + data.UserName + " - Monster Roll: " + monster)
 			return
 
+		if data.GetParam(0).lower() == settings["memeSetCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
+			#TODO - Move to function
+			#TODO - Setup permission variable.
+			set = getMemeSet(data.GetParam(1))
+			if set=="":
+				Parent.SendStreamMessage("@" + data.UserName + " - Sorry, we don't have any meme sets for "+data.GetParam(1)+" yet")
+			elif not set:
+				Parent.SendStreamMessage("@" + data.UserName + " - Invalid Command. Please try \"!mhw-meme-set-roll weapon_type\" \
+										  weapon_types: All, GS, LS, SnS, DB, Hammer, HH, CB, SA, Lance, GL, IG, Bow, LBG, HBG")
+			else:
+				Parent.SendStreamMessage("@" + data.UserName + " - Meme Set Roll: " + set)
+			return
 	return
 
 def ReloadSettings(jsonData):
@@ -171,6 +149,7 @@ def OpenReadMe():
 
 def Tick():
 	return
+
 
 class HuntData():
 	def __init__(self, userName, user, weapon, monster):

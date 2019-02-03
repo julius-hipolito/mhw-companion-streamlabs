@@ -42,6 +42,13 @@
         "tooltip": "Name of the monster roll command",
         "group": "General"
     },
+    "memeSetCommand": {
+        "type": "textbox",
+        "value": "!mhw-meme-set-roll",
+        "label": "Meme Roll Command",
+        "tooltip": "Meme set roll command",
+        "group": "General"
+    },
     "huntQueueSize": {
         "type": "numberbox",
         "label": "Hunt Queue Size",
@@ -56,7 +63,7 @@
         "label": "Permission level",
         "tooltip": "Set the permission level for the command",
         "group": "General"
-    },   
+    },
     "useCooldown": {
         "type": "checkbox",
         "value": true,
