@@ -1,4 +1,4 @@
-#MHW monster list
+#MHW Monster List
 monsters = [
 	"Teostra",
 	"Lunastra",
@@ -39,9 +39,11 @@ weapons = [
 	"Sword & Shield",
 	"Lance",
 	"Gun Lance",
-    "Great Sword",
-    "Dual Blades"
+	"Great Sword",
+	"Dual Blades"
 ]
+
+#MHW Weapon Short Hand List
 weapons_short = [
 	"ig",
 	"cb",
@@ -55,6 +57,6 @@ weapons_short = [
 	"sns",
 	"lance",
 	"gl",
-    "gs",
-    "db"
+	"gs",
+	"db"
 ]
