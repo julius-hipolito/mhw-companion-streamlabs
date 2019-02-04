@@ -17,6 +17,7 @@ sys.path.append(os.path.dirname(__file__))
 from memes.meme_sets import getMemeSet
 from queue.hunt_queue import HuntQueue
 from queue.hunt_queue import HuntData
+from settings.settings import monsters, weapons, weapons_short
 
 
 # ---------------------------
@@ -67,6 +68,8 @@ def Init():
 			"memeSetCommandPermission": "Everyone",
 			"whisperCommandsCommand": "!mhw-commands",
 			"whisperCommandsCommandPermission": "Everyone",
+			"customHuntCommand": "!mhw-custom-hunt",
+			"customHuntCommandPermission": "Everyone",
 			"huntQueueSize": 10,
 			"useCooldown": True,
 			"useCooldownMessages": True,
@@ -77,6 +80,11 @@ def Init():
 		}
 
 	huntQueue = HuntQueue(maxsize=settings["huntQueueSize"])
+
+
+# Find index of a string while ignoring capitalization
+def get_index(item, lst):
+	return next((index for index, lst_item in enumerate(lst) if lst_item.lower() == item.lower()), None)
 
 
 # ---------------------------
@@ -166,6 +174,40 @@ def Execute(data):
 
 			if commandList:
 				Parent.SendStreamWhisper(data.UserName, "Your available MHW commands are: " + ", ".join(commandList))
+
+		if firstParam == settings["customHuntCommand"] and Parent.HasPermission(data.User, settings["customHuntCommandPermission"], ""):
+			# TODO - Move to function
+			if huntQueue.is_full():
+				Parent.SendStreamMessage("@" + data.UserName + " - Sorry, the queue is full. Please try again later.")
+				return
+
+			message = data.Message.replace(settings["customHuntCommand"] + "", "").split(",")
+
+			if len(message) != 2:
+				Parent.SendStreamMessage(
+					"@" + data.UserName + " - Invalid command. Please try \"!mhw-custom-hunt weapon, monster\". "
+					"E.g.: !mhw-custom-hunt Bow, Kushala Daora")
+				return
+
+			# Check both weapon lists to see if it's valid
+			weapon_index = get_index(message[0].strip(), weapons + weapons_short)
+			if not weapon_index:
+				Parent.SendStreamMessage(
+					"@" + data.UserName + " - Invalid weapon. Check your spelling and try again. "
+					"E.g.: !mhw-custom-hunt Bow, Kushala Daora")
+				return
+
+			monster_index = get_index(message[1].strip(), monsters)
+			if not monster_index:
+				Parent.SendStreamMessage(
+					"@" + data.UserName + " - Invalid monster. Check your spelling and try again. "
+					"E.g.: !mhw-custom-hunt Bow, Kushala Daora")
+				return
+
+			weapon = weapons[weapon_index % len(weapons)]
+			monster = monsters[monster_index]
+			Parent.SendStreamMessage("@" + data.UserName + " - Added " + weapon + " vs " + monster + " to the queue!")
+			return
 
 	return
 
