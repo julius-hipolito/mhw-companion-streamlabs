@@ -1,13 +1,9 @@
 # ---------------------------
 # Import Libraries
 # ---------------------------
-import clr
 import json
 import os
-import ctypes
 import codecs
-import random
-import Queue
 import sys
 
 
@@ -18,7 +14,7 @@ import sys
 # ---------------------------
 sys.path.append(os.path.dirname(__file__))
 from memes.meme_sets import getMemeSet
-from settings.settings import weapons, monsters
+from queue.hunt_queue import HuntQueue
 
 
 # ---------------------------
@@ -78,7 +74,7 @@ def Init():
 			"onUserCooldown": "$user, $command is still on user cooldown for adsfasdfasdf minutes!"
 		}
 
-	huntQueue = Queue.Queue(maxsize=settings["huntQueueSize"])
+	huntQueue = HuntQueue(maxsize=settings["huntQueueSize"])
 
 
 # ---------------------------
@@ -90,7 +86,7 @@ def Execute(data):
 
 		global huntQueue
 		global huntCurrent
-
+		
 		firstParam = data.GetParam(0).lower()
 
 		if firstParam == settings["queueGetNextHuntCommand"] and Parent.HasPermission(data.User, settings["queueGetNextHuntCommandPermission"], ""):
@@ -115,21 +111,17 @@ def Execute(data):
 
 		if firstParam == settings["queueRandomHuntSetupCommand"] and Parent.HasPermission(data.User, settings["queueRandomHuntSetupCommandPermission"], ""):
 			# TODO - Move to function
-			weapon = random.choice(weapons)
-			monster = random.choice(monsters)
-
 			if huntQueue.full():
 				Parent.SendStreamMessage("@" + data.UserName + " - Sorry, the queue is full. Please try again later.")
 				return
 
-			huntQueue.put(HuntData(data.UserName, data.User, weapon, monster))
+			weapon, monster = huntQueue.add_hunt(data.UserName, data.User)
 			Parent.SendStreamMessage("@" + data.UserName + " - Added " + weapon + " vs " + monster + " to the queue!")
 			return
 
 		if firstParam == settings["huntRollCommand"] and Parent.HasPermission(data.User, settings["huntRollCommandPermission"], ""):
 			# TODO - Move to function
-			weapon = random.choice(weapons)
-			monster = random.choice(monsters)
+			weapon, monster = huntQueue.add_hunt(data.UserName, data.User)
 			Parent.SendStreamMessage("@" + data.UserName + " - Hunt Roll: " + weapon + " vs " + monster)
 			return
 
@@ -152,7 +144,7 @@ def Execute(data):
 				Parent.SendStreamMessage(
 					"@" + data.UserName + " - Sorry, we don't have any meme sets for " + data.GetParam(1) + " yet")
 			elif not memeSet:
-				Parent.SendStreamMessage("@" + data.UserName + " - Invalid Command. Please try \"!mhw-meme-set-roll weapon_type\" \waapon_types: All, GS, LS, SnS, DB, Hammer, HH, CB, SA, Lance, GL, IG, Bow, LBG, HBG")
+				Parent.SendStreamMessage("@" + data.UserName + " - Invalid Command. Please try \"!mhw-meme-set-roll weapon_type\" \weapon_types: All, GS, LS, SnS, DB, Hammer, HH, CB, SA, Lance, GL, IG, Bow, LBG, HBG")
 			else:
 				Parent.SendStreamMessage("@" + data.UserName + " - Meme Set Roll: " + memeSet)
 			return
@@ -189,14 +181,3 @@ def OpenReadMe():
 	location = os.path.join(os.path.dirname(__file__), "README.md")
 	os.startfile(location)
 	return
-
-
-# ---------------------------
-# Hunt Data Model
-# ---------------------------
-class HuntData():
-	def __init__(self, userName, user, weapon, monster):
-		self.userName = userName
-		self.user = user
-		self.weapon = weapon
-		self.monster = monster
