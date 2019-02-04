@@ -25,5 +25,7 @@
   "listCommandsCommand": "!mhw-commands",
   "listCommandsCommandPermission": "Everyone",
   "whisperCommandsCommand": "!mhw-commands",
-  "whisperCommandsCommandPermission": "Everyone"
+  "whisperCommandsCommandPermission": "Everyone",
+  "customHuntCommand": "!mhw-custom-hunt",
+  "customHuntCommandPermission": "Everyone"
 };
