@@ -15,6 +15,7 @@ import sys
 sys.path.append(os.path.dirname(__file__))
 from memes.meme_sets import getMemeSet
 from queue.hunt_queue import HuntQueue
+from queue.hunt_queue import HuntData
 
 
 # ---------------------------
@@ -23,7 +24,7 @@ from queue.hunt_queue import HuntQueue
 ScriptName = "MHW Companion"
 Website = "NA"
 Description = "Monster Hunter World Companion for StreamLabs ChatBot"
-Creator = "VizionzEvo"
+Creator = "Level Headed Gamers"
 Version = "0.1.0"
 
 
@@ -33,7 +34,6 @@ Version = "0.1.0"
 configFile = "config.json"
 settings = {}
 
-huntCurrent = None
 huntQueue = None
 
 
@@ -65,7 +65,6 @@ def Init():
 			"memeSetCommand": "!mhw-meme-set-roll",
 			"memeSetCommandPermission": "Everyone",
 			"huntQueueSize": 10,
-			"permission": "Everyone",
 			"useCooldown": True,
 			"useCooldownMessages": True,
 			"cooldown": 1,
@@ -85,33 +84,32 @@ def Execute(data):
 	if data.IsChatMessage:
 
 		global huntQueue
-		global huntCurrent
-		
+
 		firstParam = data.GetParam(0).lower()
 
 		if firstParam == settings["queueGetNextHuntCommand"] and Parent.HasPermission(data.User, settings["queueGetNextHuntCommandPermission"], ""):
 			# TODO - Move to function.
-			if huntQueue.empty():
+			if huntQueue.is_empty():
 				Parent.SendStreamMessage("Sorry, the hunt queue is empty.")
-				huntCurrent = None
 				return
 
-			huntCurrent = huntQueue.get()
-			Parent.SendStreamMessage("Next hunt is " + huntCurrent.weapon + " vs " + huntCurrent.monster + " from @" + huntCurrent.userName + "!")
+			nextHunt = huntQueue.next_hunt()
+			Parent.SendStreamMessage("Next hunt is " + nextHunt.weapon + " vs " + nextHunt.monster + " from @" + nextHunt.username + "!")
 			return
 
 		if firstParam == settings["currentHuntCommand"] and Parent.HasPermission(data.User, settings["currentHuntCommandPermission"], ""):
 			# TODO - Move to function
-			if huntCurrent is None:
+			currentHunt = huntQueue.current_hunt()
+			if currentHunt is None:
 				Parent.SendStreamMessage("There is no current hunt.")
 				return
 
-			Parent.SendStreamMessage("Current hunt is " + huntCurrent.weapon + " vs " + huntCurrent.monster + " from @" + huntCurrent.userName + ".")
+			Parent.SendStreamMessage("Current hunt is " + currentHunt.weapon + " vs " + currentHunt.monster + " from @" + currentHunt.uername + ".")
 			return
 
 		if firstParam == settings["queueRandomHuntSetupCommand"] and Parent.HasPermission(data.User, settings["queueRandomHuntSetupCommandPermission"], ""):
 			# TODO - Move to function
-			if huntQueue.full():
+			if huntQueue.is_full():
 				Parent.SendStreamMessage("@" + data.UserName + " - Sorry, the queue is full. Please try again later.")
 				return
 
@@ -144,7 +142,7 @@ def Execute(data):
 				Parent.SendStreamMessage(
 					"@" + data.UserName + " - Sorry, we don't have any meme sets for " + data.GetParam(1) + " yet")
 			elif not memeSet:
-				Parent.SendStreamMessage("@" + data.UserName + " - Invalid Command. Please try \"!mhw-meme-set-roll weapon_type\" \weapon_types: All, GS, LS, SnS, DB, Hammer, HH, CB, SA, Lance, GL, IG, Bow, LBG, HBG")
+				Parent.SendStreamMessage("@" + data.UserName + " - Invalid Command. Please try \"!mhw-meme-set-roll weapon_type\" | weapon_types: All, GS, LS, SnS, DB, Hammer, HH, CB, SA, Lance, GL, IG, Bow, LBG, HBG")
 			else:
 				Parent.SendStreamMessage("@" + data.UserName + " - Meme Set Roll: " + memeSet)
 			return

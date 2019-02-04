@@ -1,7 +1,7 @@
 ﻿var settings = {
   "queueRandomHuntSetupCommand": "!mhw-qhunt-roll",
   "queueGetNextHuntCommand": "!mhw-nhunt",
-  "currentHuntCommand": "!mhw-chunt",
+  "currentHuntCommand": "!mhw-hunt",
   "huntSetupCommand": "!mhw-hunt-roll",
   "weaponCommand": "!mhw-weapon-roll",
   "monsterCommand": "!mhw-monster-roll",
