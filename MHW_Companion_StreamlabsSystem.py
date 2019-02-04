@@ -10,6 +10,7 @@ import random
 import Queue
 import sys
 
+from collections import deque
 
 # ---------------------------
 # Import any custom modules under the "sys.path.append(os.path.dirname(__file__))" line
@@ -39,6 +40,8 @@ settings = {}
 
 huntCurrent = None
 huntQueue = None
+recentMonsters = None
+recentWeapons = None
 
 
 # ---------------------------
@@ -47,6 +50,8 @@ huntQueue = None
 def Init():
 	global settings
 	global huntQueue
+	global recentMonsters
+	global recentWeapons
 
 	path = os.path.dirname(__file__)
 	try:
@@ -72,6 +77,8 @@ def Init():
 		}
 
 	huntQueue = Queue.Queue(maxsize=settings["huntQueueSize"])
+	recentMonsters = deque(maxlen=10)
+	recentWeapons = deque(maxlen=5)
 
 
 # ---------------------------
@@ -83,6 +90,8 @@ def Execute(data):
 
 		global huntQueue
 		global huntCurrent
+		global recentMonsters
+		global recentWeapons
 
 		firstParam = data.GetParam(0).lower()
 
@@ -113,36 +122,42 @@ def Execute(data):
 		if firstParam == settings["queueRandomHuntSetupCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
 			# TODO - Move to function
 			# TODO - Setup permission variable.
-			weapon = random.choice(weapons)
-			monster = random.choice(monsters)
+			weapon = random.choice([weapon for weapon in weapons if weapon not in recentWeapons])
+			monster = random.choice([monster for monster in monsters if monster not in recentMonsters])
 
 			if huntQueue.full():
 				Parent.SendStreamMessage("@" + data.UserName + " - Sorry, the queue is full. Please try again later.")
 				return
 
 			huntQueue.put(HuntData(data.UserName, data.User, weapon, monster))
+			recentWeapons.append(weapon)
+			recentMonsters.append(monster)
 			Parent.SendStreamMessage("@" + data.UserName + " - Added " + weapon + " vs " + monster + " to the queue!")
 			return
 
 		if firstParam == settings["huntSetupCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
 			# TODO - Move to function
 			# TODO - Setup permission variable.
-			weapon = random.choice(weapons)
-			monster = random.choice(monsters)
+			weapon = random.choice([weapon for weapon in weapons if weapon not in recentWeapons])
+			monster = random.choice([monster for monster in monsters if monster not in recentMonsters])
+			recentWeapons.append(weapon)
+			recentMonsters.append(monster)
 			Parent.SendStreamMessage("@" + data.UserName + " - Hunt Roll: " + weapon + " vs " + monster)
 			return
 
 		if firstParam == settings["weaponCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
 			# TODO - Move to function
 			# TODO - Setup permission variable.
-			weapon = random.choice(weapons)
+			weapon = random.choice([weapon for weapon in weapons if weapon not in recentWeapons])
+			recentWeapons.append(weapon)
 			Parent.SendStreamMessage("@" + data.UserName + " - Weapon Roll: " + weapon)
 			return
 
 		if firstParam == settings["monsterCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
 			# TODO - Move to function
 			# TODO - Setup permission variable.
-			monster = random.choice(monsters)
+			monster = random.choice([monster for monster in monsters if monster not in recentMonsters])
+			recentMonsters.append(monster)
 			Parent.SendStreamMessage("@" + data.UserName + " - Monster Roll: " + monster)
 			return
 
