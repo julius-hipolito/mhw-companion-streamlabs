@@ -180,12 +180,12 @@ def Execute(data):
 			if huntQueue.is_full():
 				Parent.SendStreamMessage("@" + data.UserName + " - Sorry, the queue is full. Please try again later.")
 				return
-
-			message = data.Message.replace(settings["customHuntCommand"] + "", "").split(",")
+			commandStr = settings["customHuntCommand"]
+			message = data.Message.replace(commandStr + "", "").split(",")
 
 			if len(message) != 2:
 				Parent.SendStreamMessage(
-					"@" + data.UserName + " - Invalid command. Please try \"!mhw-custom-hunt weapon, monster\". "
+					"@" + data.UserName + " - Invalid command. Please try \""+ commandStr + " weapon, monster\"."
 					"E.g.: !mhw-custom-hunt Bow, Kushala Daora")
 				return
 
@@ -206,6 +206,7 @@ def Execute(data):
 
 			weapon = weapons[weapon_index % len(weapons)]
 			monster = monsters[monster_index]
+			huntQueue.add_hunt(data.UserName, data.User, weapon, monster)
 			Parent.SendStreamMessage("@" + data.UserName + " - Added " + weapon + " vs " + monster + " to the queue!")
 			return
 
