@@ -13,5 +13,13 @@
   "cooldown": 1,
   "onCooldown": "$user, $command is still on cooldown for $cd minutes!",
   "userCooldown": 10,
-  "onUserCooldown": "$user, $command is still on user cooldown for $cd minutes!"
+  "onUserCooldown": "$user, $command is still on user cooldown for $cd minutes!",
+  "queueRandomHuntSetupCommandPermission": "Everyone",
+  "queueGetNextHuntCommandPermission": "Everyone",
+  "currentHuntCommandPermission": "Everyone",
+  "huntRollCommand": "!mhw-hunt-roll",
+  "huntRollCommandPermission": "Everyone",
+  "weaponCommandPermission": "Everyone",
+  "monsterCommandPermission": "Everyone",
+  "memeSetCommandPermission": "Everyone"
 }

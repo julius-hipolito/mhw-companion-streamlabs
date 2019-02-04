@@ -1,117 +1,165 @@
 {
-    "output_file": "config.json",
-    "queueRandomHuntSetupCommand": {
-        "type": "textbox",
-        "value": "!mhw-qhunt-roll",
-        "label": "Queue Random Hunt Setup Command",
-        "tooltip": "Name of the queue random hunt setup command",
-        "group": "General"
-    },
-    "queueGetNextHuntCommand": {
-        "type": "textbox",
-        "value": "!mhw-nhunt",
-        "label": "Next Hunt From Queue Command",
-        "tooltip": "Name of the command to get the next hunt from the queue",
-        "group": "General"
-    },
-    "currentHuntCommand": {
-        "type": "textbox",
-        "value": "!mhw-chunt",
-        "label": "Current Hunt Command",
-        "tooltip": "Name of the command to get the current hunt",
-        "group": "General"
-    },
-    "huntSetupCommand": {
-        "type": "textbox",
-        "value": "!mhw-hunt-roll",
-        "label": "Hunt Setup Roll Command",
-        "tooltip": "Name of the hunt setup roll command",
-        "group": "General"
-    },
-    "weaponCommand": {
-        "type": "textbox",
-        "value": "!mhw-weapon-roll",
-        "label": "Weapon Roll Command",
-        "tooltip": "Name of the weapon roll command",
-        "group": "General"
-    },
-    "monsterCommand": {
-        "type": "textbox",
-        "value": "!mhw-monster-roll",
-        "label": "Monster Roll Command",
-        "tooltip": "Name of the monster roll command",
-        "group": "General"
-    },
-    "memeSetCommand": {
-        "type": "textbox",
-        "value": "!mhw-meme-set-roll",
-        "label": "Meme Roll Command",
-        "tooltip": "Meme set roll command",
-        "group": "General"
-    },
-    "huntQueueSize": {
-        "type": "numberbox",
-        "label": "Hunt Queue Size",
-        "value": 10,
-        "tooltip": "Max number of hunts allowed in queue",
-        "group": "Numbers"
-    },
-    "permission": {
-        "type": "dropdown",
-        "value": "Everyone",
-        "items": ["Everyone","Regular","Subscriber","Moderator","Editor"],
-        "label": "Permission level",
-        "tooltip": "Set the permission level for the command",
-        "group": "General"
-    },
-    "useCooldown": {
-        "type": "checkbox",
-        "value": true,
-        "label": "Use Cooldown",
-        "tooltip": "Enable/Disable cooldown",
-        "group": "Cooldown"
-    },
-    "useCooldownMessages": {
-        "type": "checkbox",
-        "value": true,
-        "label": "Use Cooldown Messages",
-        "tooltip": "Enable/Disable cooldown messages",
-        "group": "Cooldown"
-    },
-    "cooldown": {
-        "type": "numberbox",
-        "label": "Cooldown (seconds)",
-        "value": 1,
-        "tooltip": "Cooldown in seconds.",
-        "group": "Cooldown"
-    },
-    "onCooldown": {
-        "type": "textbox",
-        "value": "$user, $command is still on cooldown for $cd minutes!",
-        "label": "Cooldown Response",
-        "tooltip": "The message that the bot will display when the command is on cooldown. \r\n $user = Username \r\n $cd = Time remaining \r\n $command = Command name",
-        "group": "Cooldown"
-    },
-    "userCooldown": {
-        "type": "numberbox",
-        "label": "User Cooldown (seconds)",
-        "value": 10,
-        "tooltip": "User cooldown in seconds.",
-        "group": "Cooldown"
-    },
-    "onUserCooldown": {
-        "type": "textbox",
-        "value": "$user, $command is still on user cooldown for $cd minutes!",
-        "label": "User Cooldown Response",
-        "tooltip": "The message that the bot will display when the command is on user cooldown. \r\n $user = Username \r\n $cd = Time remaining \r\n $command = Command name",
-        "group": "Cooldown"
-    },
-    "openReadMe": {
-        "type": "button",
-        "label": "Open 'Readme Me' file",
-        "tooltip": "Opens the 'Readme.txt' for this script.",
-        "function": "OpenReadMe",
-        "wsevent": "",
-        "group": ""
-    }
+	"output_file": "config.json",
+	"queueRandomHuntSetupCommand": {
+		"type": "textbox",
+		"value": "!mhw-qhunt-roll",
+		"label": "Queue Random Hunt Setup Command",
+		"tooltip": "Name of the queue random hunt setup command",
+		"group": "Commands",
+	},
+	"queueRandomHuntSetupCommandPermission": {
+		"type": "dropdown",
+		"value": "Everyone",
+		"items": ["Everyone","Regular","Subscriber","Moderator","Editor"],
+		"label": "Queue Random Hunt Setup Permission Level",
+		"tooltip": "Set the permission level for the command above",
+		"group": "Commands"
+	},
+	"queueGetNextHuntCommand": {
+		"type": "textbox",
+		"value": "!mhw-nhunt",
+		"label": "Next Hunt From Queue Command",
+		"tooltip": "Name of the command to get the next hunt from the queue",
+		"group": "Commands"
+	},
+	"queueGetNextHuntCommandPermission": {
+		"type": "dropdown",
+		"value": "Everyone",
+		"items": ["Everyone","Regular","Subscriber","Moderator","Editor"],
+		"label": "Next Hunt From QueuePermission Level",
+		"tooltip": "Set the permission level for the command above",
+		"group": "Commands"
+	},
+	"currentHuntCommand": {
+		"type": "textbox",
+		"value": "!mhw-hunt",
+		"label": "Current Hunt Command",
+		"tooltip": "Name of the command to get the current hunt",
+		"group": "Commands"
+	},
+	"currentHuntCommandPermission": {
+		"type": "dropdown",
+		"value": "Everyone",
+		"items": ["Everyone","Regular","Subscriber","Moderator","Editor"],
+		"label": "Current Hunt Permission Level",
+		"tooltip": "Set the permission level for the command above",
+		"group": "Commands"
+	},
+	"huntRollCommand": {
+		"type": "textbox",
+		"value": "!mhw-hunt-roll",
+		"label": "Hunt Setup Roll Command",
+		"tooltip": "Name of the hunt setup roll command",
+		"group": "Commands"
+	},
+	"huntRollCommandPermission": {
+		"type": "dropdown",
+		"value": "Everyone",
+		"items": ["Everyone","Regular","Subscriber","Moderator","Editor"],
+		"label": "Hunt Setup Roll Permission Level",
+		"tooltip": "Set the permission level for the command above",
+		"group": "Commands"
+	},
+	"weaponCommand": {
+		"type": "textbox",
+		"value": "!mhw-weapon-roll",
+		"label": "Weapon Roll Command",
+		"tooltip": "Name of the weapon roll command",
+		"group": "Commands"
+	},
+	"weaponCommandPermission": {
+		"type": "dropdown",
+		"value": "Everyone",
+		"items": ["Everyone","Regular","Subscriber","Moderator","Editor"],
+		"label": "Weapon Roll Permission Level",
+		"tooltip": "Set the permission level for the command above",
+		"group": "Commands"
+	},
+	"monsterCommand": {
+		"type": "textbox",
+		"value": "!mhw-monster-roll",
+		"label": "Monster Roll Command",
+		"tooltip": "Name of the monster roll command",
+		"group": "Commands"
+	},
+	"monsterCommandPermission": {
+		"type": "dropdown",
+		"value": "Everyone",
+		"items": ["Everyone","Regular","Subscriber","Moderator","Editor"],
+		"label": "Monster Roll Permission Level",
+		"tooltip": "Set the permission level for the command above",
+		"group": "Commands"
+	},
+	"memeSetCommand": {
+		"type": "textbox",
+		"value": "!mhw-meme-set-roll",
+		"label": "Meme Roll Command",
+		"tooltip": "Meme set roll command",
+		"group": "Commands"
+	},
+	"memeSetCommandPermission": {
+		"type": "dropdown",
+		"value": "Everyone",
+		"items": ["Everyone","Regular","Subscriber","Moderator","Editor"],
+		"label": "Meme Roll Permission Level",
+		"tooltip": "Set the permission level for the command above",
+		"group": "Commands"
+	},
+	"huntQueueSize": {
+		"type": "numberbox",
+		"label": "Hunt Queue Size",
+		"value": 10,
+		"tooltip": "Max number of hunts allowed in queue",
+		"group": "Hunt Queue"
+	},
+	"useCooldown": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Use Cooldown",
+		"tooltip": "Enable/Disable cooldown",
+		"group": "Cooldown"
+	},
+	"useCooldownMessages": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Use Cooldown Messages",
+		"tooltip": "Enable/Disable cooldown messages",
+		"group": "Cooldown"
+	},
+	"cooldown": {
+		"type": "numberbox",
+		"label": "Cooldown (seconds)",
+		"value": 1,
+		"tooltip": "Cooldown in seconds.",
+		"group": "Cooldown"
+	},
+	"onCooldown": {
+		"type": "textbox",
+		"value": "$user, $command is still on cooldown for $cd minutes!",
+		"label": "Cooldown Response",
+		"tooltip": "The message that the bot will display when the command is on cooldown. \r\n $user = Username \r\n $cd = Time remaining \r\n $command = Command name",
+		"group": "Cooldown"
+	},
+	"userCooldown": {
+		"type": "numberbox",
+		"label": "User Cooldown (seconds)",
+		"value": 10,
+		"tooltip": "User cooldown in seconds.",
+		"group": "Cooldown"
+	},
+	"onUserCooldown": {
+		"type": "textbox",
+		"value": "$user, $command is still on user cooldown for $cd minutes!",
+		"label": "User Cooldown Response",
+		"tooltip": "The message that the bot will display when the command is on user cooldown. \r\n $user = Username \r\n $cd = Time remaining \r\n $command = Command name",
+		"group": "Cooldown"
+	},
+	"openReadMe": {
+		"type": "button",
+		"label": "Open 'Readme Me' file",
+		"tooltip": "Opens the 'Readme.txt' for this script.",
+		"function": "OpenReadMe",
+		"wsevent": "",
+		"group": ""
+	}
 }

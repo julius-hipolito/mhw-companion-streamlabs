@@ -55,12 +55,19 @@ def Init():
 	except:
 		settings = {
 			"queueRandomHuntSetupCommand": "!mhw-qhunt-roll",
+			"queueRandomHuntSetupCommandPermission": "Everyone",
 			"queueGetNextHuntCommand": "!mhw-nhunt",
-			"currentHuntCommand": "!mhw-chunt",
-			"huntSetupCommand": "!mhw-hunt-roll",
+			"queueGetNextHuntCommandPermission": "Everyone",
+			"currentHuntCommand": "!mhw-hunt",
+			"currentHuntCommandPermission": "Everyone",
+			"huntRollCommand": "!mhw-hunt-roll",
+			"huntRollCommandPermission": "Everyone",
 			"weaponCommand": "!mhw-weapon-roll",
+			"weaponCommandPermission": "Everyone",
 			"monsterCommand": "!mhw-monster-roll",
+			"monsterCommandPermission": "Everyone",
 			"memeSetCommand": "!mhw-meme-set-roll",
+			"memeSetCommandPermission": "Everyone",
 			"huntQueueSize": 10,
 			"permission": "Everyone",
 			"useCooldown": True,
@@ -86,33 +93,28 @@ def Execute(data):
 
 		firstParam = data.GetParam(0).lower()
 
-		if firstParam == settings["queueGetNextHuntCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
+		if firstParam == settings["queueGetNextHuntCommand"] and Parent.HasPermission(data.User, settings["queueGetNextHuntCommandPermission"], ""):
 			# TODO - Move to function.
-			# TODO - Setup permission variable.
 			if huntQueue.empty():
 				Parent.SendStreamMessage("Sorry, the hunt queue is empty.")
 				huntCurrent = None
 				return
 
 			huntCurrent = huntQueue.get()
-			Parent.SendStreamMessage(
-				"Next hunt is " + huntCurrent.weapon + " vs " + huntCurrent.monster + " from @" + huntCurrent.userName + "!")
+			Parent.SendStreamMessage("Next hunt is " + huntCurrent.weapon + " vs " + huntCurrent.monster + " from @" + huntCurrent.userName + "!")
 			return
 
-		if firstParam == settings["currentHuntCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
+		if firstParam == settings["currentHuntCommand"] and Parent.HasPermission(data.User, settings["currentHuntCommandPermission"], ""):
 			# TODO - Move to function
-			# TODO - Setup permission variable.
 			if huntCurrent is None:
 				Parent.SendStreamMessage("There is no current hunt.")
 				return
 
-			Parent.SendStreamMessage(
-				"Current hunt is " + huntCurrent.weapon + " vs " + huntCurrent.monster + " from @" + huntCurrent.userName + ".")
+			Parent.SendStreamMessage("Current hunt is " + huntCurrent.weapon + " vs " + huntCurrent.monster + " from @" + huntCurrent.userName + ".")
 			return
 
-		if firstParam == settings["queueRandomHuntSetupCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
+		if firstParam == settings["queueRandomHuntSetupCommand"] and Parent.HasPermission(data.User, settings["queueRandomHuntSetupCommandPermission"], ""):
 			# TODO - Move to function
-			# TODO - Setup permission variable.
 			weapon = random.choice(weapons)
 			monster = random.choice(monsters)
 
@@ -124,31 +126,27 @@ def Execute(data):
 			Parent.SendStreamMessage("@" + data.UserName + " - Added " + weapon + " vs " + monster + " to the queue!")
 			return
 
-		if firstParam == settings["huntSetupCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
+		if firstParam == settings["huntRollCommand"] and Parent.HasPermission(data.User, settings["huntRollCommandPermission"], ""):
 			# TODO - Move to function
-			# TODO - Setup permission variable.
 			weapon = random.choice(weapons)
 			monster = random.choice(monsters)
 			Parent.SendStreamMessage("@" + data.UserName + " - Hunt Roll: " + weapon + " vs " + monster)
 			return
 
-		if firstParam == settings["weaponCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
+		if firstParam == settings["weaponCommand"] and Parent.HasPermission(data.User, settings["weaponCommandPermission"], ""):
 			# TODO - Move to function
-			# TODO - Setup permission variable.
 			weapon = random.choice(weapons)
 			Parent.SendStreamMessage("@" + data.UserName + " - Weapon Roll: " + weapon)
 			return
 
-		if firstParam == settings["monsterCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
+		if firstParam == settings["monsterCommand"] and Parent.HasPermission(data.User, settings["monsterCommandPermission"], ""):
 			# TODO - Move to function
-			# TODO - Setup permission variable.
 			monster = random.choice(monsters)
 			Parent.SendStreamMessage("@" + data.UserName + " - Monster Roll: " + monster)
 			return
 
-		if firstParam == settings["memeSetCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
+		if firstParam == settings["memeSetCommand"] and Parent.HasPermission(data.User, settings["memeSetCommandPermission"], ""):
 			# TODO - Move to function
-			# TODO - Setup permission variable.
 			memeSet = getMemeSet(data.GetParam(1))
 			if memeSet == "":
 				Parent.SendStreamMessage(
