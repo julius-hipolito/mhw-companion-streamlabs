@@ -1,36 +1,36 @@
 import itertools
 sets = {
-    "GS" : [
+    "gs" : [
         "https://bit.ly/Meme-GS-1",
         "https://bit.ly/Meme-GS-2",
         "https://bit.ly/Meme-GS-3"
     ],
-    "LS" : [
+    "ls" : [
         "https://bit.ly/Meme-LS-1",
         "https://bit.ly/Meme-LS-2",
         "https://bit.ly/Meme-LS-3",
         "https://bit.ly/Meme-LS-4"
     ],
-    "DB" : [
+    "db" : [
         "https://bit.ly/Meme-DB-1",
         "https://bit.ly/Meme-DB-2"
     ],
-    "SnS" : [],
-    "Hammer" : [],
-    "HH" : [
+    "sns" : [],
+    "hammer" : [],
+    "hh" : [
         "https://bit.ly/Meme-HH-1",
     ],
-    "CB" : [
+    "cb" : [
         "https://bit.ly/Meme-CB-1",
     ],
-    "SA" : [],
-    "Lance" : [
+    "sa" : [],
+    "lance" : [
         "https://bit.ly/Meme-Lance-1",
     ],
-    "GL" : [
+    "gl" : [
         "https://bit.ly/Meme-GL-1",
     ],
-    "IG" : [
+    "ig" : [
         "https://bit.ly/Meme-IG-1",
         "https://bit.ly/Meme-IG-2",
         "https://bit.ly/Meme-IG-3",
@@ -38,16 +38,16 @@ sets = {
         "https://bit.ly/Meme-IG-5",
         "https://bit.ly/Meme-IG-6"
     ],
-    "Bow" : [
+    "bow" : [
         "https://bit.ly/Meme-Bow-1",
         "https://bit.ly/Meme-Bow-2",
         "https://bit.ly/Meme-Bow-3",
         "https://bit.ly/Meme-Bow-4"
     ],
-    "LBG" : [
+    "lbg" : [
         "https://bit.ly/Meme-LBG-1"
     ],
-    "HBG" : [
+    "hbg" : [
         "https://bit.ly/Meme-HBG-1",
         "https://bit.ly/Meme-HBG-2",
         "https://bit.ly/Meme-HBG-3",
@@ -58,5 +58,5 @@ sets = {
 }
 
 def getAll():
-    all=itertools.chain(sets['GS'],sets['LS'],sets['DB'],sets['SnS'],sets['Hammer'],sets['HH'],sets['CB'],sets['SA'],sets['Lance'],sets['GL'],sets['IG'],sets['Bow'],sets['HBG'],sets['LBG'])
+    all=itertools.chain(sets['gs'],sets['ls'],sets['db'],sets['sns'],sets['hammer'],sets['hh'],sets['cb'],sets['sa'],sets['lance'],sets['gl'],sets['ig'],sets['bow'],sets['hbg'],sets['lbg'])
     return list(all)
