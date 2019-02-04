@@ -5,6 +5,7 @@ import json
 import os
 import codecs
 import sys
+import random
 
 
 # ---------------------------
@@ -64,6 +65,8 @@ def Init():
 			"monsterCommandPermission": "Everyone",
 			"memeSetCommand": "!mhw-meme-set-roll",
 			"memeSetCommandPermission": "Everyone",
+			"whisperCommandsCommand": "!mhw-commands",
+			"whisperCommandsCommandPermission": "Everyone",
 			"huntQueueSize": 10,
 			"useCooldown": True,
 			"useCooldownMessages": True,
@@ -146,6 +149,23 @@ def Execute(data):
 			else:
 				Parent.SendStreamMessage("@" + data.UserName + " - Meme Set Roll: " + memeSet)
 			return
+
+		if firstParam == settings["whisperCommandsCommand"] and Parent.HasPermission(data.User, settings["whisperCommandsCommandPermission"], ""):
+			# TODO - Move to function
+			commandList = []
+
+			for attribute, value in settings.iteritems():
+				attributeStr = str(attribute)
+				commandPermissionString = attributeStr + "Permission"
+
+				if commandPermissionString not in settings:
+					continue
+
+				if Parent.HasPermission(data.User, settings[commandPermissionString], ""):
+					commandList.append(str(value))
+
+			if commandList:
+				Parent.SendStreamWhisper(data.UserName, "Your available MHW commands are: " + ", ".join(commandList))
 
 	return
 

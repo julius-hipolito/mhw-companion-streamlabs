@@ -105,6 +105,21 @@
 		"tooltip": "Set the permission level for the command above",
 		"group": "Commands"
 	},
+	"whisperCommandsCommand": {
+		"type": "textbox",
+		"value": "!mhw-commands",
+		"label": "Whisper Commands Command",
+		"tooltip": "Whisper commands command",
+		"group": "Commands"
+	},
+	"whisperCommandsCommandPermission": {
+		"type": "dropdown",
+		"value": "Everyone",
+		"items": ["Everyone","Regular","Subscriber","Moderator","Editor"],
+		"label": "Whisper Commands Permission Level",
+		"tooltip": "Set the permission level for the command above",
+		"group": "Commands"
+	},
 	"huntQueueSize": {
 		"type": "numberbox",
 		"label": "Hunt Queue Size",

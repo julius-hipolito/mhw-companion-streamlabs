@@ -21,5 +21,9 @@
   "huntRollCommandPermission": "Everyone",
   "weaponCommandPermission": "Everyone",
   "monsterCommandPermission": "Everyone",
-  "memeSetCommandPermission": "Everyone"
+  "memeSetCommandPermission": "Everyone",
+  "listCommandsCommand": "!mhw-commands",
+  "listCommandsCommandPermission": "Everyone",
+  "whisperCommandsCommand": "!mhw-commands",
+  "whisperCommandsCommandPermission": "Everyone"
 };
