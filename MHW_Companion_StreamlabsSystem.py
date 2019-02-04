@@ -107,7 +107,7 @@ def Execute(data):
 				Parent.SendStreamMessage("There is no current hunt.")
 				return
 
-			Parent.SendStreamMessage("Current hunt is " + currentHunt.weapon + " vs " + currentHunt.monster + " from @" + currentHunt.uername + ".")
+			Parent.SendStreamMessage("Current hunt is " + currentHunt.weapon + " vs " + currentHunt.monster + " from @" + currentHunt.username + ".")
 			return
 
 		if firstParam == settings["queueRandomHuntSetupCommand"] and Parent.HasPermission(data.User, settings["queueRandomHuntSetupCommandPermission"], ""):
