@@ -1,16 +1,10 @@
 # ---------------------------
 # Import Libraries
 # ---------------------------
-import clr
 import json
 import os
-import ctypes
 import codecs
-import random
-import Queue
 import sys
-
-from collections import deque
 
 # ---------------------------
 # Import any custom modules under the "sys.path.append(os.path.dirname(__file__))" line
@@ -19,7 +13,7 @@ from collections import deque
 # ---------------------------
 sys.path.append(os.path.dirname(__file__))
 from memes.meme_sets import getMemeSet
-from settings.settings import weapons, monsters
+from queue.hunt_queue import HuntQueue
 
 
 # ---------------------------
@@ -40,8 +34,6 @@ settings = {}
 
 huntCurrent = None
 huntQueue = None
-recentMonsters = None
-recentWeapons = None
 
 
 # ---------------------------
@@ -50,8 +42,6 @@ recentWeapons = None
 def Init():
 	global settings
 	global huntQueue
-	global recentMonsters
-	global recentWeapons
 
 	path = os.path.dirname(__file__)
 	try:
@@ -76,9 +66,7 @@ def Init():
 			"onUserCooldown": "$user, $command is still on user cooldown for adsfasdfasdf minutes!"
 		}
 
-	huntQueue = Queue.Queue(maxsize=settings["huntQueueSize"])
-	recentMonsters = deque(maxlen=10)
-	recentWeapons = deque(maxlen=5)
+	huntQueue = HuntQueue(maxsize=settings["huntQueueSize"])
 
 
 # ---------------------------
@@ -90,9 +78,7 @@ def Execute(data):
 
 		global huntQueue
 		global huntCurrent
-		global recentMonsters
-		global recentWeapons
-
+		
 		firstParam = data.GetParam(0).lower()
 
 		if firstParam == settings["queueGetNextHuntCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
@@ -105,7 +91,7 @@ def Execute(data):
 
 			huntCurrent = huntQueue.get()
 			Parent.SendStreamMessage(
-				"Next hunt is " + huntCurrent.weapon + " vs " + huntCurrent.monster + " from @" + huntCurrent.userName + "!")
+				"Next hunt is " + huntCurrent.weapon + " vs " + huntCurrent.monster + " from @" + huntCurrent.username + "!")
 			return
 
 		if firstParam == settings["currentHuntCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
@@ -116,48 +102,38 @@ def Execute(data):
 				return
 
 			Parent.SendStreamMessage(
-				"Current hunt is " + huntCurrent.weapon + " vs " + huntCurrent.monster + " from @" + huntCurrent.userName + ".")
+				"Current hunt is " + huntCurrent.weapon + " vs " + huntCurrent.monster + " from @" + huntCurrent.username + ".")
 			return
 
 		if firstParam == settings["queueRandomHuntSetupCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
 			# TODO - Move to function
 			# TODO - Setup permission variable.
-			weapon = random.choice([weapon for weapon in weapons if weapon not in recentWeapons])
-			monster = random.choice([monster for monster in monsters if monster not in recentMonsters])
-
 			if huntQueue.full():
 				Parent.SendStreamMessage("@" + data.UserName + " - Sorry, the queue is full. Please try again later.")
 				return
 
-			huntQueue.put(HuntData(data.UserName, data.User, weapon, monster))
-			recentWeapons.append(weapon)
-			recentMonsters.append(monster)
+			weapon, monster = huntQueue.add_hunt(data.UserName, data.User)
 			Parent.SendStreamMessage("@" + data.UserName + " - Added " + weapon + " vs " + monster + " to the queue!")
 			return
 
 		if firstParam == settings["huntSetupCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
 			# TODO - Move to function
 			# TODO - Setup permission variable.
-			weapon = random.choice([weapon for weapon in weapons if weapon not in recentWeapons])
-			monster = random.choice([monster for monster in monsters if monster not in recentMonsters])
-			recentWeapons.append(weapon)
-			recentMonsters.append(monster)
+			weapon, monster = huntQueue.add_hunt(data.UserName, data.User)
 			Parent.SendStreamMessage("@" + data.UserName + " - Hunt Roll: " + weapon + " vs " + monster)
 			return
 
 		if firstParam == settings["weaponCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
 			# TODO - Move to function
 			# TODO - Setup permission variable.
-			weapon = random.choice([weapon for weapon in weapons if weapon not in recentWeapons])
-			recentWeapons.append(weapon)
+			weapon = random.choice(weapons)
 			Parent.SendStreamMessage("@" + data.UserName + " - Weapon Roll: " + weapon)
 			return
 
 		if firstParam == settings["monsterCommand"] and Parent.HasPermission(data.User, settings["permission"], ""):
 			# TODO - Move to function
 			# TODO - Setup permission variable.
-			monster = random.choice([monster for monster in monsters if monster not in recentMonsters])
-			recentMonsters.append(monster)
+			monster = random.choice(monsters)
 			Parent.SendStreamMessage("@" + data.UserName + " - Monster Roll: " + monster)
 			return
 
@@ -169,7 +145,7 @@ def Execute(data):
 				Parent.SendStreamMessage(
 					"@" + data.UserName + " - Sorry, we don't have any meme sets for " + data.GetParam(1) + " yet")
 			elif not memeSet:
-				Parent.SendStreamMessage("@" + data.UserName + " - Invalid Command. Please try \"!mhw-meme-set-roll weapon_type\" \waapon_types: All, GS, LS, SnS, DB, Hammer, HH, CB, SA, Lance, GL, IG, Bow, LBG, HBG")
+				Parent.SendStreamMessage("@" + data.UserName + " - Invalid Command. Please try \"!mhw-meme-set-roll weapon_type\" \weapon_types: All, GS, LS, SnS, DB, Hammer, HH, CB, SA, Lance, GL, IG, Bow, LBG, HBG")
 			else:
 				Parent.SendStreamMessage("@" + data.UserName + " - Meme Set Roll: " + memeSet)
 			return
@@ -206,14 +182,3 @@ def OpenReadMe():
 	location = os.path.join(os.path.dirname(__file__), "README.md")
 	os.startfile(location)
 	return
-
-
-# ---------------------------
-# Hunt Data Model
-# ---------------------------
-class HuntData():
-	def __init__(self, userName, user, weapon, monster):
-		self.userName = userName
-		self.user = user
-		self.weapon = weapon
-		self.monster = monster
