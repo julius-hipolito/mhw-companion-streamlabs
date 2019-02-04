@@ -15,36 +15,48 @@ monsters = [
 	"Lavasioth",
 	"Legiana",
 	"Odogaron",
-	"Devil Jho",
-	"Xeno'jiva",
+	"Deviljho",
+	"Xeno'jiiva",
 	"Zorah Magdaros",
 	"Great Jagras",
 	"Kulu-Ya-Ku",
 	"Tzitzi-Ya-Ku",
 	"Great Girros",
-	"Dodogama"
+	"Dodogama",
+	"Pukei-Pukei",
+	"Barroth",
+	"Behemoth",
+	"Jyuratodus",
+	"Tobi-Kadachi",
+	"Anjanath",
+	"Rathian",
+	"Paolumu",
+	"Radobaan",
+	"Kushala Daora",
 ]
 
 #MHW Weapon List
 weapons = [
+	"Any",
 	"Insect Glaive",
 	"Charge Blade",
 	"Switch Axe",
 	"Bow",
-	"Light Bow Gun",
-	"Heavy Bow Gun",
+	"Light Bowgun",
+	"Heavy Bowgun",
 	"Hammer",
 	"Hunting Horn",
 	"Long Sword",
 	"Sword & Shield",
 	"Lance",
-	"Gun Lance",
+	"Gunlance",
 	"Great Sword",
 	"Dual Blades"
 ]
 
 #MHW Weapon Short Hand List
 weapons_short = [
+	"any",
 	"ig",
 	"cb",
 	"sa",

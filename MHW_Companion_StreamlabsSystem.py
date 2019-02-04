@@ -144,7 +144,7 @@ def Execute(data):
 				Parent.SendStreamMessage(
 					"@" + data.UserName + " - Sorry, we don't have any meme sets for " + data.GetParam(1) + " yet")
 			elif not memeSet:
-				Parent.SendStreamMessage("@" + data.UserName + " - Invalid Command. Please try \"!mhw-meme-set-roll weapon_type\" \weapon_types: All, GS, LS, SnS, DB, Hammer, HH, CB, SA, Lance, GL, IG, Bow, LBG, HBG")
+				Parent.SendStreamMessage("@" + data.UserName + " - Invalid Command. Please try \"!mhw-meme-set-roll weapon_type\" \weapon_types: Any, GS, LS, SnS, DB, Hammer, HH, CB, SA, Lance, GL, IG, Bow, LBG, HBG")
 			else:
 				Parent.SendStreamMessage("@" + data.UserName + " - Meme Set Roll: " + memeSet)
 			return
