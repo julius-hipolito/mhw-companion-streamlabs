@@ -1,12 +1,18 @@
 #MHW Monster List
 monsters = [
+	"Any",
 	"Teostra",
 	"Lunastra",
 	"Kirin",
 	"Nergigante",
 	"Vaal Hazak",
+	"Kushala Daora",
+	"Kulve Taroth",
+	"Xeno'jiiva",
+	"Behemoth",
 	"Rathalos",
 	"Azure Rathalos",
+	"Rathian",
 	"Pink Rathian",
 	"Diablos",
 	"Black Diablos",
@@ -16,7 +22,6 @@ monsters = [
 	"Legiana",
 	"Odogaron",
 	"Deviljho",
-	"Xeno'jiiva",
 	"Zorah Magdaros",
 	"Great Jagras",
 	"Kulu-Ya-Ku",
@@ -25,14 +30,11 @@ monsters = [
 	"Dodogama",
 	"Pukei-Pukei",
 	"Barroth",
-	"Behemoth",
 	"Jyuratodus",
 	"Tobi-Kadachi",
 	"Anjanath",
-	"Rathian",
 	"Paolumu",
-	"Radobaan",
-	"Kushala Daora",
+	"Radobaan"
 ]
 
 #MHW Weapon List
