@@ -5,7 +5,7 @@
 		"value": "!mhw-qhunt-roll",
 		"label": "Queue Random Hunt Setup Command",
 		"tooltip": "Name of the queue random hunt setup command",
-		"group": "Commands",
+		"group": "Commands"
 	},
 	"queueRandomHuntSetupCommandPermission": {
 		"type": "dropdown",
@@ -126,6 +126,216 @@
 		"value": 10,
 		"tooltip": "Max number of hunts allowed in queue",
 		"group": "Hunt Queue"
+	},
+	"enableWeaponAnyRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "ANY - Random Hunt",
+		"tooltip": "Enable ANY option in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponAnyRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "ANY - Requested Hunt",
+		"tooltip": "Enable ANY option in requested hunts.",
+		"group": "Weapons"
+	},
+	"enableWeaponInsectGlaiveRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Insect Glaive - Random Hunt",
+		"tooltip": "Enable Insect Glaive in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponInsectGlaiveRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Insect Glaive - Requested Hunt",
+		"tooltip": "Enable Insect Glaive in requested hunts.",
+		"group": "Weapons"
+	},
+	"enableWeaponChargeBladeRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Charge Blade - Random Hunt",
+		"tooltip": "Enable Charge Blade option in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponChargeBladeRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Charge Blade - Requested Hunt",
+		"tooltip": "Enable Charge Blade option in requested hunts.",
+		"group": "Weapons"
+	},
+	"enableWeaponSwitchAxeRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Switch Axe - Random Hunt",
+		"tooltip": "Enable Switch Axe option in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponSwitchAxeRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Switch Axe - Requested Hunt",
+		"tooltip": "Enable Switch Axe option in requested hunts.",
+		"group": "Weapons"
+	},
+	"enableWeaponBowRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Bow - Random Hunt",
+		"tooltip": "Enable Bow option in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponBowRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Bow - Requested Hunt",
+		"tooltip": "Enable Bow option in requested hunts.",
+		"group": "Weapons"
+	},
+	"enableWeaponLightBowgunRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Light Bowgun - Random Hunt",
+		"tooltip": "Enable Light Bowgun option in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponLightBowgunRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Light Bowgun - Requested Hunt",
+		"tooltip": "Enable Light Bowgun option in requested hunts.",
+		"group": "Weapons"
+	},	
+	"enableWeaponHeavyBowgunRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Heavy Bowgun - Random Hunt",
+		"tooltip": "Enable Heavy Bowgun option in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponHeavyBowgunRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Heavy Bowgun - Requested Hunt",
+		"tooltip": "Enable Heavy Bowgun option in requested hunts.",
+		"group": "Weapons"
+	},	
+	"enableWeaponHammerRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Hammer - Random Hunt",
+		"tooltip": "Enable Hammer option in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponHammerRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Hammer - Requested Hunt",
+		"tooltip": "Enable Hammer option in requested hunts.",
+		"group": "Weapons"
+	},	
+	"enableWeaponHuntingHornRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Hunting Horn - Random Hunt",
+		"tooltip": "Enable Hunting Horn option in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponHuntingHornRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Hunting Horn - Requested Hunt",
+		"tooltip": "Enable Hunting Horn option in requested hunts.",
+		"group": "Weapons"
+	},	
+	"enableWeaponLongSwordRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Long Sword - Random Hunt",
+		"tooltip": "Enable Long Sword option in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponLongSwordRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Long Sword - Requested Hunt",
+		"tooltip": "Enable Long Sword option in requested hunts.",
+		"group": "Weapons"
+	},	
+	"enableWeaponSwordShieldRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Sword & Shield - Random Hunt",
+		"tooltip": "Enable Sword & Shield option in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponSwordShieldRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Sword & Shield - Requested Hunt",
+		"tooltip": "Enable Sword & Shield option in requested hunts.",
+		"group": "Weapons"
+	},	
+	"enableWeaponLanceRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Lance - Random Hunt",
+		"tooltip": "Enable Lance option in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponLanceRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Lance - Requested Hunt",
+		"tooltip": "Enable Lance option in requested hunts.",
+		"group": "Weapons"
+	},	
+	"enableWeaponGunlanceRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Gunlance - Random Hunt",
+		"tooltip": "Enable Gunlance option in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponGunlanceRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Gunlance - Requested Hunt",
+		"tooltip": "Enable Gunlance option in requested hunts.",
+		"group": "Weapons"
+	},	
+	"enableWeaponGreatSwordRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Great Sword - Random Hunt",
+		"tooltip": "Enable Great Sword option in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponGreatSwordRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Great Sword - Requested Hunt",
+		"tooltip": "Enable Great Sword option in requested hunts.",
+		"group": "Weapons"
+	},	
+	"enableWeaponDualBladesRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Dual Blades - Random Hunt",
+		"tooltip": "Enable Dual Blades option in hunt rolls.",
+		"group": "Weapons"
+	},
+	"enableWeaponDualBladesRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Dual Blades - Requested Hunt",
+		"tooltip": "Enable Dual Blades option in requested hunts.",
+		"group": "Weapons"
 	},
 	"useCooldown": {
 		"type": "checkbox",
