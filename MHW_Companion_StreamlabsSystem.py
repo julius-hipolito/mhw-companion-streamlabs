@@ -191,14 +191,14 @@ def Execute(data):
 
 			# Check both weapon lists to see if it's valid
 			weapon_index = get_index(message[0].strip(), weapons + weapons_short)
-			if not weapon_index:
+			if weapon_index == None:
 				Parent.SendStreamMessage(
 					"@" + data.UserName + " - Invalid weapon. Check your spelling and try again. "
 					"E.g.: !mhw-custom-hunt Bow, Kushala Daora")
 				return
 
 			monster_index = get_index(message[1].strip(), monsters)
-			if not monster_index:
+			if monster_index == None:
 				Parent.SendStreamMessage(
 					"@" + data.UserName + " - Invalid monster. Check your spelling and try again. "
 					"E.g.: !mhw-custom-hunt Bow, Kushala Daora")
