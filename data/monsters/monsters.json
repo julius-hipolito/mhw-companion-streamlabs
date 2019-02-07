@@ -1,0 +1,172 @@
+[
+	{
+		"id": 0,
+		"displayName": "Any",
+		"validNames": ["?"]
+	},
+	{
+		"id": 1,
+		"displayName": "Teostra",
+		"validNames": []
+	},
+	{
+		"id": 2,
+		"displayName": "Lunastra",
+		"validNames": []
+	},
+	{
+		"id": 3,
+		"displayName": "Kirin",
+		"validNames": ["Unicorn"]
+	},
+	{
+		"id": 4,
+		"displayName": "Nergigante",
+		"validNames": []
+	},
+	{
+		"id": 5,
+		"displayName": "Vaal Hazak",
+		"validNames": []
+	},
+	{
+		"id": 6,
+		"displayName": "Kushala Daora",
+		"validNames": []
+	},
+	{
+		"id": 7,
+		"displayName": "Kulve Taroth",
+		"validNames": ["KT"]
+	},
+	{
+		"id": 8,
+		"displayName": "Xeno'jiiva",
+		"validNames": []
+	},
+	{
+		"id": 9,
+		"displayName": "Behemoth",
+		"validNames": []
+	},
+	{
+		"id": 10,
+		"displayName": "Rathalos",
+		"validNames": []
+	},
+	{
+		"id": 11,
+		"displayName": "Azure Rathalos",
+		"validNames": []
+	},
+	{
+		"id": 12,
+		"displayName": "Rathian",
+		"validNames": []
+	},
+	{
+		"id": 13,
+		"displayName": "Pink Rathian",
+		"validNames": []
+	},
+	{
+		"id": 14,
+		"displayName": "Diablos",
+		"validNames": []
+	},
+	{
+		"id": 15,
+		"displayName": "Black Diablos",
+		"validNames": []
+	},
+	{
+		"id": 16,
+		"displayName": "Bazelgeuse",
+		"validNames": []
+	},
+	{
+		"id": 17,
+		"displayName": "Uragaan",
+		"validNames": []
+	},
+	{
+		"id": 18,
+		"displayName": "Lavasioth",
+		"validNames": []
+	},
+	{
+		"id": 19,
+		"displayName": "Legiana",
+		"validNames": []
+	},
+	{
+		"id": 20,
+		"displayName": "Deviljho",
+		"validNames": []
+	},
+	{
+		"id": 21,
+		"displayName": "Zorah Magdaros",
+		"validNames": []
+	},
+	{
+		"id": 22,
+		"displayName": "Great Jagras",
+		"validNames": []
+	},
+	{
+		"id": 23,
+		"displayName": "Kulu-Ya-Ku",
+		"validNames": []
+	},
+	{
+		"id": 24,
+		"displayName": "Tzitzi-Ya-Ku",
+		"validNames": []
+	},
+	{
+		"id": 25,
+		"displayName": "Great Girros",
+		"validNames": []
+	},
+	{
+		"id": 26,
+		"displayName": "Dodogama",
+		"validNames": []
+	},
+	{
+		"id": 27,
+		"displayName": "Pukei-Pukei",
+		"validNames": []
+	},
+	{
+		"id": 28,
+		"displayName": "Barroth",
+		"validNames": []
+	},
+	{
+		"id": 29,
+		"displayName": "Jyuratodus",
+		"validNames": []
+	},
+	{
+		"id": 30,
+		"displayName": "Tobi-Kadachi",
+		"validNames": []
+	},
+	{
+		"id": 31,
+		"displayName": "Anjanath",
+		"validNames": []
+	},
+	{
+		"id": 32,
+		"displayName": "Paolumu",
+		"validNames": []
+	},
+	{
+		"id": 33,
+		"displayName": "Radobaan",
+		"validNames": []
+	}
+]
