@@ -337,6 +337,496 @@
 		"tooltip": "Enable Dual Blades option in requested hunts.",
 		"group": "Weapons"
 	},
+	"enableMonsterAnyRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Any - Random Hunt",
+		"tooltip": "Enable Any option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterAnyRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Any - Requested Hunt",
+		"tooltip": "Enable Any option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterTeostraRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Teostra - Random Hunt",
+		"tooltip": "Enable Teostra option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterTeostraRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Teostra - Requested Hunt",
+		"tooltip": "Enable Teostra option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterLunastraRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Lunastra - Random Hunt",
+		"tooltip": "Enable Lunastra option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterLunastraRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Lunastra - Requested Hunt",
+		"tooltip": "Enable Lunastra option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterKirinRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Kirin - Random Hunt",
+		"tooltip": "Enable Kirin option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterKirinRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Kirin - Requested Hunt",
+		"tooltip": "Enable Kirin option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterNergiganteRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Nergigante - Random Hunt",
+		"tooltip": "Enable Nergigante option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterNergiganteRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Nergigante - Requested Hunt",
+		"tooltip": "Enable Nergigante option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterVaalHazakRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Vaal Hazak - Random Hunt",
+		"tooltip": "Enable Vaal Hazak option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterVaalHazakRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Vaal Hazak - Requested Hunt",
+		"tooltip": "Enable Vaal Hazak option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterKushalaDaoraRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Kushala Daora - Random Hunt",
+		"tooltip": "Enable Kushala Daora option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterKushalaDaoraRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Kushala Daora - Requested Hunt",
+		"tooltip": "Enable Kushala Daora option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterKulveTarothRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Kulve Taroth - Random Hunt",
+		"tooltip": "Enable Kulve Taroth option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterKulveTarothRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Kulve Taroth - Requested Hunt",
+		"tooltip": "Enable Kulve Taroth option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterXenojiivaRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Xeno'jiiva - Random Hunt",
+		"tooltip": "Enable Xeno'jiiva option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterXenojiivaRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Xeno'jiiva - Requested Hunt",
+		"tooltip": "Enable Xeno'jiiva option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterBehemothRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Behemoth - Random Hunt",
+		"tooltip": "Enable Behemoth option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterBehemothRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Behemoth - Requested Hunt",
+		"tooltip": "Enable Behemoth option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterRathalosRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Rathalos - Random Hunt",
+		"tooltip": "Enable Rathalos option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterRathalosRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Rathalos - Requested Hunt",
+		"tooltip": "Enable Rathalos option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterAzureRathalosRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Azure Rathalos - Random Hunt",
+		"tooltip": "Enable Azure Rathalos option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterAzureRathalosRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Azure Rathalos - Requested Hunt",
+		"tooltip": "Enable Azure Rathalos option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterRathianRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Rathian - Random Hunt",
+		"tooltip": "Enable Rathian option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterRathianRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Rathian - Requested Hunt",
+		"tooltip": "Enable Rathian option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterPinkRathianRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Pink Rathian - Random Hunt",
+		"tooltip": "Enable Pink Rathian option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterPinkRathianRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Pink Rathian - Requested Hunt",
+		"tooltip": "Enable Pink Rathian option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterDiablosRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Diablos - Random Hunt",
+		"tooltip": "Enable Diablos option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterDiablosRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Diablos - Requested Hunt",
+		"tooltip": "Enable Diablos option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterBlackDiablosRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Black Diablos - Random Hunt",
+		"tooltip": "Enable Black Diablos option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterBlackDiablosRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Black Diablos - Requested Hunt",
+		"tooltip": "Enable Black Diablos option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterBazelgeuseRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Bazelgeuse - Random Hunt",
+		"tooltip": "Enable Bazelgeuse option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterBazelgeuseRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Bazelgeuse - Requested Hunt",
+		"tooltip": "Enable Bazelgeuse option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterUragaanRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Uragaan - Random Hunt",
+		"tooltip": "Enable Uragaan option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterUragaanRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Uragaan - Requested Hunt",
+		"tooltip": "Enable Uragaan option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterLavasiothRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Lavasioth - Random Hunt",
+		"tooltip": "Enable Lavasioth option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterLavasiothRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Lavasioth - Requested Hunt",
+		"tooltip": "Enable Lavasioth option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterLegianaRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Legiana - Random Hunt",
+		"tooltip": "Enable Legiana option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterLegianaRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Legiana - Requested Hunt",
+		"tooltip": "Enable Legiana option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterOdogaronRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Odogaron - Random Hunt",
+		"tooltip": "Enable Odogaron option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterOdogaronRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Odogaron - Requested Hunt",
+		"tooltip": "Enable Odogaron option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterDeviljhoRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Deviljho - Random Hunt",
+		"tooltip": "Enable Deviljho option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterDeviljhoRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Deviljho - Requested Hunt",
+		"tooltip": "Enable Deviljho option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterZorahMagdarosRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Zorah Magdaros - Random Hunt",
+		"tooltip": "Enable Zorah Magdaros option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterZorahMagdarosRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Zorah Magdaros - Requested Hunt",
+		"tooltip": "Enable Zorah Magdaros option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterGreatJagrasRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Great Jagras - Random Hunt",
+		"tooltip": "Enable Great Jagras option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterGreatJagrasRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Great Jagras - Requested Hunt",
+		"tooltip": "Enable Great Jagras option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterKuluYaKuRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Kulu-Ya-Ku - Random Hunt",
+		"tooltip": "Enable Kulu-Ya-Ku option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterKuluYaKuRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Kulu-Ya-Ku - Requested Hunt",
+		"tooltip": "Enable Kulu-Ya-Ku option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterTzitziYaKuRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Tzitzi-Ya-Ku - Random Hunt",
+		"tooltip": "Enable Tzitzi-Ya-Ku option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterTzitziYaKuRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Tzitzi-Ya-Ku - Requested Hunt",
+		"tooltip": "Enable Tzitzi-Ya-Ku option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterGreatGirrosRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Great Girros - Random Hunt",
+		"tooltip": "Enable Great Girros option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterGreatGirrosRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Great Girros - Requested Hunt",
+		"tooltip": "Enable Great Girros option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterDodogamaRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Dodogama - Random Hunt",
+		"tooltip": "Enable Dodogama option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterDodogamaRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Dodogama - Requested Hunt",
+		"tooltip": "Enable Dodogama option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterPukeiPukeiRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Pukei-Pukei - Random Hunt",
+		"tooltip": "Enable Pukei-Pukei option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterPukeiPukeiRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Pukei-Pukei - Requested Hunt",
+		"tooltip": "Enable Pukei-Pukei option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterBarrothRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Barroth - Random Hunt",
+		"tooltip": "Enable Barroth option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterBarrothRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Barroth - Requested Hunt",
+		"tooltip": "Enable Barroth option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterJyuratodusRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Jyuratodus - Random Hunt",
+		"tooltip": "Enable Jyuratodus option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterJyuratodusRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Jyuratodus - Requested Hunt",
+		"tooltip": "Enable Jyuratodus option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterTobiKadachiRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Tobi-Kadachi - Random Hunt",
+		"tooltip": "Enable Tobi-Kadachi option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterTobiKadachiRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Tobi-Kadachi - Requested Hunt",
+		"tooltip": "Enable Tobi-Kadachi option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterAnjanathRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Anjanath - Random Hunt",
+		"tooltip": "Enable Anjanath option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterAnjanathRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Anjanath - Requested Hunt",
+		"tooltip": "Enable Anjanath option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterPaolumuRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Paolumu - Random Hunt",
+		"tooltip": "Enable Paolumu option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterPaolumuRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Paolumu - Requested Hunt",
+		"tooltip": "Enable Paolumu option in requested hunts.",
+		"group": "Monsters"
+	},
+	"enableMonsterRadobaanRoll": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Radobaan - Random Hunt",
+		"tooltip": "Enable Radobaan option in hunt rolls.",
+		"group": "Monsters"
+	},
+	"enableMonsterRadobaanRequest": {
+		"type": "checkbox",
+		"value": true,
+		"label": "Radobaan - Requested Hunt",
+		"tooltip": "Enable Radobaan option in requested hunts.",
+		"group": "Monsters"
+	},
 	"useCooldown": {
 		"type": "checkbox",
 		"value": true,
@@ -381,8 +871,8 @@
 	},
 	"openReadMe": {
 		"type": "button",
-		"label": "Open 'Readme Me' file",
-		"tooltip": "Opens the 'Readme.txt' for this script.",
+		"label": "Open 'READ ME' file",
+		"tooltip": "Opens the 'README.md' for this script.",
 		"function": "OpenReadMe",
 		"wsevent": "",
 		"group": ""
