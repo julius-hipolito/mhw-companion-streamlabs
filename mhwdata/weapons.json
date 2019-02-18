@@ -1,0 +1,77 @@
+[
+	{
+		"id": 0,
+		"displayName": "Any",
+		"validNames": ["?"]
+	},
+	{
+		"id": 1,
+		"displayName": "Insect Glaive",
+		"validNames": ["ig", "InsectGlaive"]
+	},
+	{
+		"id": 2,
+		"displayName": "Charge Blade",
+		"validNames": ["cb", "ChargeBlade"]
+	},
+	{
+		"id": 3,
+		"displayName": "Switch Axe",
+		"validNames": ["sa", "SwitchAxe"]
+	},
+	{
+		"id": 4,
+		"displayName": "Bow",
+		"validNames": ["b", "opaf"]
+	},
+	{
+		"id": 5,
+		"displayName": "Light Bowgun",
+		"validNames": ["lbg", "LightBowgun"]
+	},
+	{
+		"id": 6,
+		"displayName": "Heavy Bowgun",
+		"validNames": ["hbg", "HeavyBowgun"]
+	},
+	{
+		"id": 7,
+		"displayName": "Hammer",
+		"validNames": ["h"]
+	},
+	{
+		"id": 8,
+		"displayName": "Hunting Horn",
+		"validNames": ["hh", "HuntingHorn"]
+	},
+	{
+		"id": 9,
+		"displayName": "Long Sword",
+		"validNames": ["ls", "LongSword"]
+	},
+	{
+		"id": 10,
+		"displayName": "Sword & Shield",
+		"validNames": ["sns", "swordnshield", "s&s", "SwordShield", "ss"]
+	},
+	{
+		"id": 11,
+		"displayName": "Lance",
+		"validNames": ["l"]
+	},
+	{
+		"id": 12,
+		"displayName": "Gunlance",
+		"validNames": ["gl"]
+	},
+	{
+		"id": 13,
+		"displayName": "Great Sword",
+		"validNames": ["gs", "GreatSword"]
+	},
+	{
+		"id": 14,
+		"displayName": "Dual Blades",
+		"validNames": ["db", "DualBlades"]
+	}
+]

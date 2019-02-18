@@ -5,7 +5,6 @@ import json
 import os
 import codecs
 import sys
-import random
 
 
 # ---------------------------
@@ -17,7 +16,8 @@ sys.path.append(os.path.dirname(__file__))
 from memes.meme_sets import getMemeSet
 from queue.hunt_queue import HuntQueue
 from queue.hunt_queue import HuntData
-from settings.settings import monsters, weapons, weapons_short
+from mhwdata import weapons
+from mhwdata import monsters
 
 
 # ---------------------------
@@ -171,20 +171,36 @@ def Init():
 			"enableMonsterPaolumuRequest": True,
 			"enableMonsterRadobaanRoll": True,
 			"enableMonsterRadobaanRequest": True,
-			"useCooldown": True,
-			"useCooldownMessages": True,
-			"cooldown": 1,
-			"onCooldown": "$user, $command is still on cooldown for adfasdfasdf minutes!",
-			"userCooldown": 10,
-			"onUserCooldown": "$user, $command is still on user cooldown for adsfasdfasdf minutes!"
 		}
 
-	huntQueue = HuntQueue(maxsize=settings["huntQueueSize"])
+	weapons.initialize_weapon_data()
+	monsters.initialize_monster_data()
 
+	# Parse Settings
+	for setting in settings.keys():
 
-# Find index of a string while ignoring capitalization
-def get_index(item, lst):
-	return next((index for index, lst_item in enumerate(lst) if lst_item.lower() == item.lower()), None)
+		if isinstance(settings[setting], bool) and settings[setting] == True:
+			isRoll = ("Roll" in setting)
+
+			trimmedSettingKey = setting.replace("Roll", "")
+			trimmedSettingKey = trimmedSettingKey.replace("Request", "")
+
+			if "enableWeapon" in trimmedSettingKey:
+				trimmedSettingKey = trimmedSettingKey.replace("enableWeapon", "")
+				if (isRoll):
+					weapons.add_weapon_to_enabled_rolls(trimmedSettingKey)
+				else:
+					weapons.add_weapon_to_enabled_requests(trimmedSettingKey)
+				
+
+			if "enableMonster" in trimmedSettingKey:
+				trimmedSettingKey = trimmedSettingKey.replace("enableMonster", "")
+				if (isRoll):
+					monsters.add_monster_to_enabled_rolls(trimmedSettingKey)
+				else:
+					monsters.add_monster_to_enabled_requests(trimmedSettingKey)
+
+		huntQueue = HuntQueue(settings["huntQueueSize"], weapons.get_weapon_roll_count(), monsters.get_monster_roll_count())
 
 
 # ---------------------------
@@ -230,30 +246,31 @@ def Execute(data):
 
 		if firstParam == settings["huntRollCommand"] and Parent.HasPermission(data.User, settings["huntRollCommandPermission"], ""):
 			# TODO - Move to function
-			weapon, monster = huntQueue.add_hunt(data.UserName, data.User)
+			weapon = huntQueue.roll_weapon()
+			monster = huntQueue.roll_monster()
 			Parent.SendStreamMessage("@" + data.UserName + " - Hunt Roll: " + weapon + " vs " + monster)
 			return
 
 		if firstParam == settings["weaponCommand"] and Parent.HasPermission(data.User, settings["weaponCommandPermission"], ""):
 			# TODO - Move to function
-			weapon = random.choice(weapons)
+			weapon = huntQueue.roll_weapon()
 			Parent.SendStreamMessage("@" + data.UserName + " - Weapon Roll: " + weapon)
 			return
 
 		if firstParam == settings["monsterCommand"] and Parent.HasPermission(data.User, settings["monsterCommandPermission"], ""):
 			# TODO - Move to function
-			monster = random.choice(monsters)
+			monster = huntQueue.roll_monster()
 			Parent.SendStreamMessage("@" + data.UserName + " - Monster Roll: " + monster)
 			return
 
 		if firstParam == settings["memeSetCommand"] and Parent.HasPermission(data.User, settings["memeSetCommandPermission"], ""):
-			# TODO - Move to function
+			#TODO - Move to function
 			memeSet = getMemeSet(data.GetParam(1))
 			if memeSet == "":
 				Parent.SendStreamMessage(
 					"@" + data.UserName + " - Sorry, we don't have any meme sets for " + data.GetParam(1) + " yet")
 			elif not memeSet:
-				Parent.SendStreamMessage("@" + data.UserName + " - Invalid Command. Please try \"!mhw-meme-set-roll weapon_type\" | weapon_types: Any, GS, LS, SnS, DB, Hammer, HH, CB, SA, Lance, GL, IG, Bow, LBG, HBG")
+				Parent.SendStreamMessage("@" + data.UserName + " - Invalid Command. Please try \"!mhw-meme-set-roll weapon_type\" | weapon_types: Any, GS, LS, SnS, DB, H, HH, CB, SA, L, GL, IG, Bow, LBG, HBG")
 			else:
 				Parent.SendStreamMessage("@" + data.UserName + " - Meme Set Roll: " + memeSet)
 			return
@@ -290,22 +307,20 @@ def Execute(data):
 				return
 
 			# Check both weapon lists to see if it's valid
-			weapon_index = get_index(message[0].strip(), weapons + weapons_short)
-			if weapon_index == None:
+			weapon = weapons.validate_name(message[0].strip(), weapons.HUNT_TYPE_REQUEST)
+			if weapon == None:
 				Parent.SendStreamMessage(
 					"@" + data.UserName + " - Invalid weapon. Check your spelling and try again. "
 					"E.g.: !mhw-custom-hunt Bow, Kushala Daora")
 				return
 
-			monster_index = get_index(message[1].strip(), monsters)
-			if monster_index == None:
-				Parent.SendStreamMessage(
+			monster = monsters.validate_name(message[1].strip(), monsters.HUNT_TYPE_REQUEST)
+			if monster == None:
+				Parent.SendStreamMessage("you entered: " + message[1].strip() + 
 					"@" + data.UserName + " - Invalid monster. Check your spelling and try again. "
 					"E.g.: !mhw-custom-hunt Bow, Kushala Daora")
 				return
 
-			weapon = weapons[weapon_index % len(weapons)]
-			monster = monsters[monster_index]
 			huntQueue.add_hunt(data.UserName, data.User, weapon, monster)
 			Parent.SendStreamMessage("@" + data.UserName + " - Added " + weapon + " vs " + monster + " to the queue!")
 			return

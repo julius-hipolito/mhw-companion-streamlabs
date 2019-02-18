@@ -827,48 +827,6 @@
 		"tooltip": "Enable Radobaan option in requested hunts.",
 		"group": "Monsters"
 	},
-	"useCooldown": {
-		"type": "checkbox",
-		"value": true,
-		"label": "Use Cooldown",
-		"tooltip": "Enable/Disable cooldown",
-		"group": "Cooldown"
-	},
-	"useCooldownMessages": {
-		"type": "checkbox",
-		"value": true,
-		"label": "Use Cooldown Messages",
-		"tooltip": "Enable/Disable cooldown messages",
-		"group": "Cooldown"
-	},
-	"cooldown": {
-		"type": "numberbox",
-		"label": "Cooldown (seconds)",
-		"value": 1,
-		"tooltip": "Cooldown in seconds.",
-		"group": "Cooldown"
-	},
-	"onCooldown": {
-		"type": "textbox",
-		"value": "$user, $command is still on cooldown for $cd minutes!",
-		"label": "Cooldown Response",
-		"tooltip": "The message that the bot will display when the command is on cooldown. \r\n $user = Username \r\n $cd = Time remaining \r\n $command = Command name",
-		"group": "Cooldown"
-	},
-	"userCooldown": {
-		"type": "numberbox",
-		"label": "User Cooldown (seconds)",
-		"value": 10,
-		"tooltip": "User cooldown in seconds.",
-		"group": "Cooldown"
-	},
-	"onUserCooldown": {
-		"type": "textbox",
-		"value": "$user, $command is still on user cooldown for $cd minutes!",
-		"label": "User Cooldown Response",
-		"tooltip": "The message that the bot will display when the command is on user cooldown. \r\n $user = Username \r\n $cd = Time remaining \r\n $command = Command name",
-		"group": "Cooldown"
-	},
 	"openReadMe": {
 		"type": "button",
 		"label": "Open 'READ ME' file",

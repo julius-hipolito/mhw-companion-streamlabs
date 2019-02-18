@@ -1,0 +1,177 @@
+[
+	{
+		"id": 0,
+		"displayName": "Any",
+		"validNames": ["?"]
+	},
+	{
+		"id": 1,
+		"displayName": "Teostra",
+		"validNames": []
+	},
+	{
+		"id": 2,
+		"displayName": "Lunastra",
+		"validNames": []
+	},
+	{
+		"id": 3,
+		"displayName": "Kirin",
+		"validNames": ["Unicorn"]
+	},
+	{
+		"id": 4,
+		"displayName": "Nergigante",
+		"validNames": []
+	},
+	{
+		"id": 5,
+		"displayName": "Vaal Hazak",
+		"validNames": ["VaalHazak"]
+	},
+	{
+		"id": 6,
+		"displayName": "Kushala Daora",
+		"validNames": ["KushalaDaora"]
+	},
+	{
+		"id": 7,
+		"displayName": "Kulve Taroth",
+		"validNames": ["KT", "KulveTaroth"]
+	},
+	{
+		"id": 8,
+		"displayName": "Xeno'jiiva",
+		"validNames": ["Xeno", "Xenojiiva"]
+	},
+	{
+		"id": 9,
+		"displayName": "Behemoth",
+		"validNames": ["Behe"]
+	},
+	{
+		"id": 10,
+		"displayName": "Rathalos",
+		"validNames": ["Los"]
+	},
+	{
+		"id": 11,
+		"displayName": "Azure Rathalos",
+		"validNames": ["AzureRathalos"]
+	},
+	{
+		"id": 12,
+		"displayName": "Rathian",
+		"validNames": ["Ian"]
+	},
+	{
+		"id": 13,
+		"displayName": "Pink Rathian",
+		"validNames": ["PinkRathian"]
+	},
+	{
+		"id": 14,
+		"displayName": "Diablos",
+		"validNames": []
+	},
+	{
+		"id": 15,
+		"displayName": "Black Diablos",
+		"validNames": ["BlackDiablos"]
+	},
+	{
+		"id": 16,
+		"displayName": "Bazelgeuse",
+		"validNames": []
+	},
+	{
+		"id": 17,
+		"displayName": "Uragaan",
+		"validNames": []
+	},
+	{
+		"id": 18,
+		"displayName": "Lavasioth",
+		"validNames": []
+	},
+	{
+		"id": 19,
+		"displayName": "Legiana",
+		"validNames": []
+	},
+	{
+		"id": 20,
+		"displayName": "Deviljho",
+		"validNames": []
+	},
+	{
+		"id": 21,
+		"displayName": "Zorah Magdaros",
+		"validNames": ["ZorahMagdaros"]
+	},
+	{
+		"id": 22,
+		"displayName": "Great Jagras",
+		"validNames": ["GreatJagras"]
+	},
+	{
+		"id": 23,
+		"displayName": "Kulu-Ya-Ku",
+		"validNames": ["KuluYaKu"]
+	},
+	{
+		"id": 24,
+		"displayName": "Tzitzi-Ya-Ku",
+		"validNames": ["TzitziYaKu"]
+	},
+	{
+		"id": 25,
+		"displayName": "Great Girros",
+		"validNames": ["GreatGirros"]
+	},
+	{
+		"id": 26,
+		"displayName": "Dodogama",
+		"validNames": []
+	},
+	{
+		"id": 27,
+		"displayName": "Pukei-Pukei",
+		"validNames": ["PukeiPukei"]
+	},
+	{
+		"id": 28,
+		"displayName": "Barroth",
+		"validNames": []
+	},
+	{
+		"id": 29,
+		"displayName": "Jyuratodus",
+		"validNames": []
+	},
+	{
+		"id": 30,
+		"displayName": "Tobi-Kadachi",
+		"validNames": ["TobiKadachi"]
+	},
+	{
+		"id": 31,
+		"displayName": "Anjanath",
+		"validNames": []
+	},
+	{
+		"id": 32,
+		"displayName": "Paolumu",
+		"validNames": []
+	},
+	{
+		"id": 33,
+		"displayName": "Radobaan",
+		"validNames": []
+	},
+	{
+		"id": 34,
+		"displayName": "Odogaron",
+		"validNames": []
+	}
+]
