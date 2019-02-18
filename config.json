@@ -15,7 +15,7 @@
   "userCooldown": 10,
   "onUserCooldown": "$user, $command is still on user cooldown for $cd minutes!",
   "queueRandomHuntSetupCommandPermission": "Everyone",
-  "queueGetNextHuntCommandPermission": "Everyone",
+  "queueGetNextHuntCommandPermission": "Moderator",
   "currentHuntCommandPermission": "Everyone",
   "huntRollCommand": "!mhw-hunt-roll",
   "huntRollCommandPermission": "Everyone",

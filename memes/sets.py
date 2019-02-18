@@ -16,7 +16,7 @@ sets = {
         "https://bit.ly/Meme-DB-2"
     ],
     "sns" : [],
-    "hammer" : [],
+    "h" : [],
     "hh" : [
         "https://bit.ly/Meme-HH-1",
     ],
@@ -24,7 +24,7 @@ sets = {
         "https://bit.ly/Meme-CB-1",
     ],
     "sa" : [],
-    "lance" : [
+    "l" : [
         "https://bit.ly/Meme-Lance-1",
     ],
     "gl" : [
@@ -38,7 +38,7 @@ sets = {
         "https://bit.ly/Meme-IG-5",
         "https://bit.ly/Meme-IG-6"
     ],
-    "bow" : [
+    "b" : [
         "https://bit.ly/Meme-Bow-1",
         "https://bit.ly/Meme-Bow-2",
         "https://bit.ly/Meme-Bow-3",
@@ -58,5 +58,5 @@ sets = {
 }
 
 def getAll():
-    all=itertools.chain(sets['gs'],sets['ls'],sets['db'],sets['sns'],sets['hammer'],sets['hh'],sets['cb'],sets['sa'],sets['lance'],sets['gl'],sets['ig'],sets['bow'],sets['hbg'],sets['lbg'])
+    all=itertools.chain(sets['gs'],sets['ls'],sets['db'],sets['sns'],sets['h'],sets['hh'],sets['cb'],sets['sa'],sets['l'],sets['gl'],sets['ig'],sets['b'],sets['hbg'],sets['lbg'])
     return list(all)

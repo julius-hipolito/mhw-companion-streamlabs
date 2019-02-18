@@ -27,47 +27,47 @@
 	{
 		"id": 5,
 		"displayName": "Vaal Hazak",
-		"validNames": []
+		"validNames": ["VaalHazak"]
 	},
 	{
 		"id": 6,
 		"displayName": "Kushala Daora",
-		"validNames": []
+		"validNames": ["KushalaDaora"]
 	},
 	{
 		"id": 7,
 		"displayName": "Kulve Taroth",
-		"validNames": ["KT"]
+		"validNames": ["KT", "KulveTaroth"]
 	},
 	{
 		"id": 8,
 		"displayName": "Xeno'jiiva",
-		"validNames": []
+		"validNames": ["Xeno", "Xenojiiva"]
 	},
 	{
 		"id": 9,
 		"displayName": "Behemoth",
-		"validNames": []
+		"validNames": ["Behe"]
 	},
 	{
 		"id": 10,
 		"displayName": "Rathalos",
-		"validNames": []
+		"validNames": ["Los"]
 	},
 	{
 		"id": 11,
 		"displayName": "Azure Rathalos",
-		"validNames": []
+		"validNames": ["AzureRathalos"]
 	},
 	{
 		"id": 12,
 		"displayName": "Rathian",
-		"validNames": []
+		"validNames": ["Ian"]
 	},
 	{
 		"id": 13,
 		"displayName": "Pink Rathian",
-		"validNames": []
+		"validNames": ["PinkRathian"]
 	},
 	{
 		"id": 14,
@@ -77,7 +77,7 @@
 	{
 		"id": 15,
 		"displayName": "Black Diablos",
-		"validNames": []
+		"validNames": ["BlackDiablos"]
 	},
 	{
 		"id": 16,
@@ -107,27 +107,27 @@
 	{
 		"id": 21,
 		"displayName": "Zorah Magdaros",
-		"validNames": []
+		"validNames": ["ZorahMagdaros"]
 	},
 	{
 		"id": 22,
 		"displayName": "Great Jagras",
-		"validNames": []
+		"validNames": ["GreatJagras"]
 	},
 	{
 		"id": 23,
 		"displayName": "Kulu-Ya-Ku",
-		"validNames": []
+		"validNames": ["KuluYaKu"]
 	},
 	{
 		"id": 24,
 		"displayName": "Tzitzi-Ya-Ku",
-		"validNames": []
+		"validNames": ["TzitziYaKu"]
 	},
 	{
 		"id": 25,
 		"displayName": "Great Girros",
-		"validNames": []
+		"validNames": ["GreatGirros"]
 	},
 	{
 		"id": 26,
@@ -137,7 +137,7 @@
 	{
 		"id": 27,
 		"displayName": "Pukei-Pukei",
-		"validNames": []
+		"validNames": ["PukeiPukei"]
 	},
 	{
 		"id": 28,
@@ -152,7 +152,7 @@
 	{
 		"id": 30,
 		"displayName": "Tobi-Kadachi",
-		"validNames": []
+		"validNames": ["TobiKadachi"]
 	},
 	{
 		"id": 31,
@@ -167,6 +167,11 @@
 	{
 		"id": 33,
 		"displayName": "Radobaan",
+		"validNames": []
+	},
+	{
+		"id": 34,
+		"displayName": "Odogaron",
 		"validNames": []
 	}
 ]
