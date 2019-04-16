@@ -65,7 +65,7 @@ class HuntQueue:
 
 	def roll_weapon(self):
 		rollableWeapons = weapons.get_weapon_names_for_roll()
-		weapon = "Any" + str(len(rollableWeapons))
+		weapon = "Any"
 		if len(rollableWeapons) == 0:
 			return weapon
 		elif len(rollableWeapons) == 1:
