@@ -1,8 +1,23 @@
 {
 	"output_file": "config.json",
+	"queueCustomHuntCommand": {
+		"type": "textbox",
+		"value": "!mhw-hunt-custom",
+		"label": "Queue Random Hunt Setup Command",
+		"tooltip": "Name of the queue random hunt setup command",
+		"group": "Commands"
+	},
+	"queueCustomHuntSetupCommandPermission": {
+		"type": "dropdown",
+		"value": "Everyone",
+		"items": ["Everyone","Regular","Subscriber","Moderator","Editor"],
+		"label": "Queue Custom Hunt Setup Permission Level",
+		"tooltip": "Set the permission level for the command above",
+		"group": "Commands"
+	},
 	"queueRandomHuntSetupCommand": {
 		"type": "textbox",
-		"value": "!mhw-qhunt-roll",
+		"value": "!mhw-hunt-roll",
 		"label": "Queue Random Hunt Setup Command",
 		"tooltip": "Name of the queue random hunt setup command",
 		"group": "Commands"
@@ -17,7 +32,7 @@
 	},
 	"queueGetNextHuntCommand": {
 		"type": "textbox",
-		"value": "!mhw-nhunt",
+		"value": "!mhw-next",
 		"label": "Next Hunt From Queue Command",
 		"tooltip": "Name of the command to get the next hunt from the queue",
 		"group": "Commands"
@@ -32,7 +47,7 @@
 	},
 	"currentHuntCommand": {
 		"type": "textbox",
-		"value": "!mhw-hunt",
+		"value": "!mhw-current",
 		"label": "Current Hunt Command",
 		"tooltip": "Name of the command to get the current hunt",
 		"group": "Commands"

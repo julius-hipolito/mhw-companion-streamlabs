@@ -1,7 +1,7 @@
 ﻿var settings = {
-  "queueRandomHuntSetupCommand": "!mhw-qhunt-roll",
-  "queueGetNextHuntCommand": "!mhw-nhunt",
-  "currentHuntCommand": "!mhw-hunt",
+  "queueRandomHuntSetupCommand": "!mhw-hunt-random",
+  "queueGetNextHuntCommand": "!mhw-next",
+  "currentHuntCommand": "!mhw-current",
   "huntSetupCommand": "!mhw-hunt-roll",
   "weaponCommand": "!mhw-weapon-roll",
   "monsterCommand": "!mhw-monster-roll",
@@ -127,5 +127,7 @@
   "enableMonsterKushalaDaoraRoll": true,
   "enableMonsterKushalaDaoraRequest": true,
   "enableMonsterKulveTarothRoll": true,
-  "enableMonsterKulveTarothRequest": true
+  "enableMonsterKulveTarothRequest": true,
+  "queueCustomHuntCommand": "!mhw-hunt-custom",
+  "queueCustomHuntSetupCommandPermission": "Everyone"
 };
