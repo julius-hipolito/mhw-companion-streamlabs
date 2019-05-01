@@ -28,8 +28,8 @@ class HuntQueue:
 	def next_hunt(self):
 		try:
 			self.__currentHunt = self.__huntQueue.popleft()
-		except Empty:
-			# Catch Empty exception if attempting .get() on an empty queue.
+		except IndexError:
+			# Catch Index Error exception if attempting .get() on an empty queue.
 			self.__currentHunt = None
 		return self.__currentHunt
 
