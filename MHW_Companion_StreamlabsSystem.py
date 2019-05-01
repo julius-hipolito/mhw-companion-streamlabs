@@ -24,7 +24,7 @@ from mhwdata import monsters
 # [Required] Script Information
 # ---------------------------
 ScriptName = "MHW Companion"
-Website = "NA"
+Website = "https://github.com/Vizionz/mhw-companion-streamlabs"
 Description = "Monster Hunter World Companion for StreamLabs ChatBot"
 Creator = "Level Headed Gamers"
 Version = "0.1.0"
@@ -58,7 +58,7 @@ def Init():
 			"queueGetNextHuntCommandPermission": "Everyone",
 			"currentHuntCommand": "!mhw-hunt",
 			"currentHuntCommandPermission": "Everyone",
-			"huntRollCommand": "!mhw-hunt-roll",
+			"huntRollCommand": "!mhw-hunt-random",
 			"huntRollCommandPermission": "Everyone",
 			"weaponCommand": "!mhw-weapon-roll",
 			"weaponCommandPermission": "Everyone",
@@ -68,8 +68,8 @@ def Init():
 			"memeSetCommandPermission": "Everyone",
 			"whisperCommandsCommand": "!mhw-commands",
 			"whisperCommandsCommandPermission": "Everyone",
-			"customHuntCommand": "!mhw-custom-hunt",
-			"customHuntCommandPermission": "Everyone",
+			"queueCustomHuntCommand": "!mhw-hunt-custom",
+			"queueCustomHuntCommandPermission": "Everyone",
 			"huntQueueSize": 10,
 			"enableWeaponAnyRoll": True,
 			"enableWeaponAnyRequest": True,
@@ -216,11 +216,12 @@ def Execute(data):
 
 		if firstParam == settings["queueGetNextHuntCommand"] and Parent.HasPermission(data.User, settings["queueGetNextHuntCommandPermission"], ""):
 			# TODO - Move to function.
+			nextHunt = huntQueue.next_hunt()
+
 			if huntQueue.is_empty():
 				Parent.SendStreamMessage("Sorry, the hunt queue is empty.")
 				return
 
-			nextHunt = huntQueue.next_hunt()
 			Parent.SendStreamMessage("Next hunt is " + nextHunt.weapon + " vs " + nextHunt.monster + " from @" + nextHunt.username + "!")
 			return
 
@@ -292,18 +293,18 @@ def Execute(data):
 			if commandList:
 				Parent.SendStreamWhisper(data.UserName, "Your available MHW commands are: " + ", ".join(commandList))
 
-		if firstParam == settings["customHuntCommand"] and Parent.HasPermission(data.User, settings["customHuntCommandPermission"], ""):
+		if firstParam == settings["queueCustomHuntCommand"] and Parent.HasPermission(data.User, settings["queueCustomHuntCommandPermission"], ""):
 			# TODO - Move to function
 			if huntQueue.is_full():
 				Parent.SendStreamMessage("@" + data.UserName + " - Sorry, the queue is full. Please try again later.")
 				return
-			commandStr = settings["customHuntCommand"]
+			commandStr = settings["queueCustomHuntCommand"]
 			message = data.Message.replace(commandStr + "", "").split(",")
 
 			if len(message) != 2:
 				Parent.SendStreamMessage(
-					"@" + data.UserName + " - Invalid command. Please try \""+ commandStr + " weapon, monster\"."
-					"E.g.: !mhw-custom-hunt Bow, Kushala Daora")
+					"@" + data.UserName + " - Invalid command. Please try \" "+ commandStr + " weapon, monster\"."
+					"E.g.: " + commandStr + " Bow, Kushala Daora")
 				return
 
 			# Check both weapon lists to see if it's valid
@@ -311,14 +312,14 @@ def Execute(data):
 			if weapon == None:
 				Parent.SendStreamMessage(
 					"@" + data.UserName + " - Invalid weapon. Check your spelling and try again. "
-					"E.g.: !mhw-custom-hunt Bow, Kushala Daora")
+					"E.g.: " + commandStr + " Bow, Kushala Daora")
 				return
 
 			monster = monsters.validate_name(message[1].strip(), monsters.HUNT_TYPE_REQUEST)
 			if monster == None:
 				Parent.SendStreamMessage("you entered: " + message[1].strip() + 
 					"@" + data.UserName + " - Invalid monster. Check your spelling and try again. "
-					"E.g.: !mhw-custom-hunt Bow, Kushala Daora")
+					"E.g.: " + commandStr + " Bow, Kushala Daora")
 				return
 
 			huntQueue.add_hunt(data.UserName, data.User, weapon, monster)
