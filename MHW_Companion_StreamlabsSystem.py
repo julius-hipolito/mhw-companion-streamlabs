@@ -69,7 +69,7 @@ def Init():
 			"whisperCommandsCommand": "!mhw-commands",
 			"whisperCommandsCommandPermission": "Everyone",
 			"queueCustomHuntCommand": "!mhw-hunt-custom",
-			"queuecustomHuntCommandPermission": "Everyone",
+			"queueCustomHuntCommandPermission": "Everyone",
 			"huntQueueSize": 10,
 			"enableWeaponAnyRoll": True,
 			"enableWeaponAnyRequest": True,
@@ -216,11 +216,12 @@ def Execute(data):
 
 		if firstParam == settings["queueGetNextHuntCommand"] and Parent.HasPermission(data.User, settings["queueGetNextHuntCommandPermission"], ""):
 			# TODO - Move to function.
+			nextHunt = huntQueue.next_hunt()
+
 			if huntQueue.is_empty():
 				Parent.SendStreamMessage("Sorry, the hunt queue is empty.")
 				return
 
-			nextHunt = huntQueue.next_hunt()
 			Parent.SendStreamMessage("Next hunt is " + nextHunt.weapon + " vs " + nextHunt.monster + " from @" + nextHunt.username + "!")
 			return
 

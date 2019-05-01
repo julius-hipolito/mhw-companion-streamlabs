@@ -7,7 +7,7 @@
 		"tooltip": "Name of the queue random hunt setup command",
 		"group": "Commands"
 	},
-	"queueCustomHuntSetupCommandPermission": {
+	"queueCustomHuntCommandPermission": {
 		"type": "dropdown",
 		"value": "Everyone",
 		"items": ["Everyone","Regular","Subscriber","Moderator","Editor"],
@@ -17,7 +17,7 @@
 	},
 	"queueRandomHuntSetupCommand": {
 		"type": "textbox",
-		"value": "!mhw-hunt-roll",
+		"value": "!mhw-hunt-random",
 		"label": "Queue Random Hunt Setup Command",
 		"tooltip": "Name of the queue random hunt setup command",
 		"group": "Commands"
