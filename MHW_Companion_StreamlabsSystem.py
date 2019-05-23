@@ -218,7 +218,7 @@ def Execute(data):
 			# TODO - Move to function.
 			nextHunt = huntQueue.next_hunt()
 
-			if huntQueue.is_empty():
+			if nextHunt == None and huntQueue.is_empty():
 				Parent.SendStreamMessage("Sorry, the hunt queue is empty.")
 				return
 
